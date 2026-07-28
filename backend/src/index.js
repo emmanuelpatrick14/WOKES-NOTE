@@ -86,3 +86,6 @@ const Port = process.env.PORT
 app.listen(Port, () =>
   console.info(`🚀  Application running at localhost:${Port}  🚀`)
 );
+
+
+export default app;

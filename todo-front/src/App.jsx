@@ -3,16 +3,16 @@
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
 // import './App.css'
-import Header from "./Components/Header/Header"
+// import Header from "./Components/Header/Header"
 // import Abi from "./Components/About/About"
-import About  from "./Components/About/About"
+// import About  from "./Components/About/About"
 import './playground'
-import Footer from "./Components/Footer"
+// import Footer from "./Components/Footer"
 
 import Home from "./Home.jsx"
 
 // import NewComp from "./NewComp"
-import Greeting from "./Greeting.jsx";
+// import Greeting from "./Greeting.jsx";
 // import Welcome from "./Welcome.jsx"
 // import { StudentCard } from "./Note.jsx"
 
