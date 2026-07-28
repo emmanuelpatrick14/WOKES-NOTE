@@ -7,7 +7,7 @@ function Create() {
 
 
   const handleCreateTodoTitle =()=>{
-    axios.post('http://localhost:3000/api/v1/todos',{ title:title})
+    axios.post(`${import.meta.env.VITE_API_BASE_URL}/todos`,{ title:title})
     .then(result => {
       console.log(result);
       

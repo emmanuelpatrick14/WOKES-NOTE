@@ -25,7 +25,7 @@ function Home() {
 
 
     useEffect(() => {
-       axios.get('http://localhost:3000/api/v1/todos')
+       axios.get(`${import.meta.env.VITE_API_BASE_URL}/todos`)
       .then(result => setTodos(result.data)
       
       )
@@ -35,7 +35,7 @@ function Home() {
     // let todos = 1
     const handleEdit = (id,completed)=>{
 
-        axios.put('http://localhost:3000/api/v1/todos/'+id,{
+        axios.put(`${import.meta.env.VITE_API_BASE_URL}/todos`+id,{
           completed: !completed
         })
       .then(result => {
@@ -53,7 +53,7 @@ function Home() {
 
     const handleDelete = (id)=>{
 
-        axios.delete('http://localhost:3000/api/v1/todos/'+id)
+        axios.delete(`${import.meta.env.VITE_API_BASE_URL}/todos`+id)
       .then(result => {
         location.reload();
         
