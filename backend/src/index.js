@@ -25,6 +25,11 @@ app.use(express.json())
 
 app.use(cors());
 
+
+app.get('/',(req,res,next)=>{
+
+  res.send("Welcome to the backend")
+})
 // define routes
 app.use( '/api/v1', router );
 

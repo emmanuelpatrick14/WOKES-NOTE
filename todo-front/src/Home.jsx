@@ -69,7 +69,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h2> Todo List</h2>
+      <h2> Todo List</h2> 
       <Create/>
 
       {
