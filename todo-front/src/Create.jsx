@@ -1,37 +1,31 @@
 
 import {useState} from 'react'
 import axios from 'axios'
+
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function Create() {
 
     const [title, setTitle] = useState();
 
 
-  const handleCreateTodoTitle =()=>{
-    axios.post(`${import.meta.env.VITE_API_BASE_URL}/todos`,{ title:title})
-    .then(result => {
-      console.log(result);
+  
+    const handleCreateTodoTitle = ()=>{
+      console.log('create Title got hit');
       
-    } )
-    .catch(err => console.log(err)
-    )
+    axios.post(`${VITE_API_BASE_URL}/todos`,{ title:title})
 
-
-  }
-    // const handleCreateTodoTitle = ()=>{
-    //   console.log('create Title got hit');
+      .then(result => {
+        console.log(result)
+        location.reload();
       
-    //   axios.post('http://localhost:3000/api/v1/todos',{ title: title})
-    //   .then(result => {
-    //     console.log(result)
-    //     location.reload();
-      
-    //   }
-    //   )
-    //   .catch(err => console.log(err))
+      }
+      )
+      .catch(err => console.log(err))
 
-    //   setTitle(' ')
+      setTitle(' ')
 
-    // }
+    }
   return (
     <div className='create_form'>
         <input type="text"  value={title}  placeholder='Enter Todo' onChange={(e)=> setTitle(e.target.value)}/>

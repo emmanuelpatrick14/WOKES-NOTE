@@ -3,7 +3,11 @@ todo-front/node_modules/
 backend/node_modules/
 
 # Environment files
+todo-front/.env.production
+todo-front/.env.development
 todo-front/.env
+
+
 backend/.env
 
 # Build folders

@@ -4,6 +4,10 @@ import { BsCircleFill , BsFillTrashFill} from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
 import axios from 'axios'
 
+
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+
 function Home() {
 
     const [todos, setTodos] = useState([
@@ -24,18 +28,20 @@ function Home() {
     ]);
 
 
-    useEffect(() => {
-       axios.get(`${import.meta.env.VITE_API_BASE_URL}/todos`)
-      .then(result => setTodos(result.data)
-      
-      )
-      .catch(err => console.log(err))  
-    }, [])
+   useEffect(() => {
+  axios.get(`${VITE_API_BASE_URL}/todos`)
+    .then(result => {
+      console.log("Response:", result.data);
+      // console.log("Is Array?", Array.isArray(result.data));
+      setTodos(result.data);
+    })
+    .catch(err => console.log(err));
+}, []);
     
     // let todos = 1
     const handleEdit = (id,completed)=>{
 
-        axios.put(`${import.meta.env.VITE_API_BASE_URL}/todos`+id,{
+        axios.put(`${VITE_API_BASE_URL}/todos/`+id,{
           completed: !completed
         })
       .then(result => {
@@ -53,7 +59,7 @@ function Home() {
 
     const handleDelete = (id)=>{
 
-        axios.delete(`${import.meta.env.VITE_API_BASE_URL}/todos`+id)
+        axios.delete(`${VITE_API_BASE_URL}/todos/`+id)
       .then(result => {
         location.reload();
         
